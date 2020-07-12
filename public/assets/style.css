@@ -1,0 +1,136 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+#root {
+  /* width: 1280px;
+  height: 720px; */
+  min-width: 360px;
+  height: 100%;
+  min-height: 720px;
+  background-image: url(./street.jpeg);
+  background-size: cover;
+  display: flex;
+  background-position: left;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  justify-content: start;
+}
+
+#character {
+  width: 360px;
+  height: calc(100% + 240px);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+#character canvas {
+  height: 720px;
+  width: 360px;
+}
+
+#messages {
+  position: relative;
+  flex: 1 1 auto;
+  box-sizing: border-box;
+  overflow: hidden;
+  height: 100%;
+  padding: 64px 36px ;
+  border-radius: 0;
+  background-color: rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.36s ease-in-out;
+}
+
+#messages.hidden {
+  width: 0px;
+  height: 0px;
+  margin-left: -180px;
+  flex: 0 0 0;
+  overflow: hidden;
+  display: inline-block;
+  border-radius: 50%;
+  padding: 0;
+  transition: all 0.36s ease-in-out;
+}
+
+#messages > div.history {
+  flex: 1 1 auto;
+  flex-direction: column;
+  display: flex;
+  max-height: calc(100% - 2.4rem);
+  overflow: scroll;
+  transition: all 0.6s ease-in-out;
+}
+
+#messages > div.history > div.row{
+  width: 100%;
+  display: flex;
+  font-size: 1.2rem;
+  
+}
+
+#messages > div.history > div.row.user {
+  flex-direction: row-reverse;
+}
+
+#messages > div.history > div.row.bot {
+  flex-direction: row;
+}
+
+#messages > div.history > div.row > div.bubble{
+  margin: 0.3rem 0.6rem;
+  background-color: rgba(255,255,255,0.2);
+  min-width: 10rem;
+  min-height: 1.8rem;
+  line-height: 1.8rem;
+  border-radius: 0.6rem;
+  color: white;
+  padding: 0.3rem 1.2rem;
+  position: relative;
+}
+
+#messages > div.history > div.row.user > div.bubble::after{
+  content: '';
+  border-right: 0;
+  border-bottom: 0.6rem solid transparent;
+  border-left: 0.6rem solid rgba(255,255,255,0.2);
+  border-top: 0.6rem solid transparent;
+  position: absolute;
+  top: 0.6rem;
+  right: -0.6rem;
+}
+
+#messages > div.history > div.row.bot > div.bubble::after{
+  content: '';
+  border-left: 0;
+  border-bottom: 0.6rem solid transparent;
+  border-right: 0.6rem solid rgba(255,255,255,0.2);
+  border-top: 0.6rem solid transparent;
+  position: absolute;
+  top: 0.6rem;
+  left: -0.6rem;
+}
+
+#messages > div.user-input {
+  width: 100%;
+  display: flex;
+}
+
+#messages > div.user-input > input {
+  flex: 1 1 auto;
+  background-color: rgba(255,255,255,0.4);
+  border-radius: 0.6rem;
+  border: none;
+  height: 2.4rem;
+  color: white;
+  font-size: 1.2rem;
+  line-height: 2.4rem;
+  padding: 0 1.2rem;
+}

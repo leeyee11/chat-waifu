@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title> APPX - Chart Waifu</title>
+  <link rel="stylesheet" type="text/css" href="./assets/style.css" />
+</head>
+
+<body>
+  <div id="root">
+    <div id="character"></div>
+    <div id="messages">
+      <div ref="history" class="history">
+        <div class="row" v-for="message in messages" v-bind:class="message.sender">
+          <div class="bubble">
+            {{ message.content }}
+          </div>
+        </div>
+      </div>
+      <div class="user-input">
+        <input
+          placeholder="Tell me something?"
+          v-on:keydown.enter="submit"
+          v-model:value="user.input"
+        />
+      </div>
+    </div>
+  </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="./lib/live2dcubismcore.min.js"></script>
+<script src="bundle.min.js"></script>
+</html>
